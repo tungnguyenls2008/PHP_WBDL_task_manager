@@ -19,7 +19,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        echo "Hiển thị Form tạo khách hàng";
+        return view('modules.customer.create');
     }
 
     /**
@@ -47,7 +47,7 @@ class CustomerController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('modules.customer.edit');
     }
 
     /**
