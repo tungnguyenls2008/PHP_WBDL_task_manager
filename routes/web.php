@@ -32,3 +32,20 @@ Route::prefix('customer')->group(function () {
 
     Route::delete('{id}', 'CustomerController@destroy');
 });
+Route::resource('customers', 'CustomerController');
+Route::prefix('tasks')->group(function () {
+    Route::get('/', 'TaskController@index');
+    Route::post('/', 'TaskController@index');
+
+    Route::get('/create', 'TaskController@create');
+
+    Route::post('/store', 'TaskController@store');
+
+    Route::get('/{taskId}', 'TaskController@show');
+
+    Route::get('/{taskId}/edit', 'TaskController@edit');
+
+    Route::patch('/{taskId}', 'TaskController@update');
+
+    Route::delete('/{photo}', 'TaskController@destroy');
+});
