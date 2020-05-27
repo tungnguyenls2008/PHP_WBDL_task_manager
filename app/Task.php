@@ -21,4 +21,5 @@ class Task extends Model
     public function category(){
         return $this->belongsTo("App\Category");
     }
+    protected $table = 'task';
 }
