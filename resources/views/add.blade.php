@@ -20,7 +20,7 @@
         <div class="title m-b-md">
             Add new Task
         </div>
-        <form class="text-left" method="POST" action="{{ route('tasks.store') }}" enctype="multipart/form-data">
+        <form action="{{ route('form.submit') }}" method="GET" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="inputTitle">Task title</label>
@@ -57,8 +57,16 @@
                        id="inputFile"
                        name="inputFile">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" name="submit">Submit</button>
         </form>
+        <div class="error-message">
+            @if ($errors->any())
+                @foreach($errors->all() as $nameError)
+                    <p style="color:red">{{ $nameError }}</p>
+                @endforeach
+            @endif
+        </div>
+        <p style='color:green'>{{ (isset($success)) ? $success : '' }}</p>
         <hr>
         <a href="{{ route('welcome') }}">< Back</a>
     </div>

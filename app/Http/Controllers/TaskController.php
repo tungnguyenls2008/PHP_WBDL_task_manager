@@ -20,7 +20,11 @@ class TaskController extends Controller
         $tasks = Task::all();
         return view('tasks.list', compact('tasks'));
     }
-
+    public function checkValidation(FormTaskRequest $request)
+    {
+        $success = "Dữ liệu được xác thực thành công";
+        return view('tasks.home', compact('success'));
+    }
     /**
      * Show the form for creating a new resource.
      *

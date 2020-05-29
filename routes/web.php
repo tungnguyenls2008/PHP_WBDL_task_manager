@@ -13,4 +13,5 @@ Route::post('/create','TaskController@store')->name('tasks.store');
 Route::get('/{id}/edit','TaskController@edit')->name('tasks.edit');
 Route::post('/{id}/edit','TaskController@update')->name('tasks.update');
 Route::get('/{id}/destroy','TaskController@destroy')->name('tasks.destroy');
+Route::get('task-validation', 'TaskController@checkValidation')->name('form.submit');
 });
