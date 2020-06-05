@@ -15,3 +15,7 @@ Route::post('/{id}/edit','TaskController@update')->name('tasks.update');
 Route::get('/{id}/destroy','TaskController@destroy')->name('tasks.destroy');
 Route::get('task-validation', 'TaskController@checkValidation')->name('form.submit');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
